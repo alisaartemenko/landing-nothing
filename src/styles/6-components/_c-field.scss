@@ -1,0 +1,41 @@
+.c-field__control {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  font: 400 14px/20px var(--font-body);
+  background: var(--color-field);
+  border: 0;
+  border-radius: 4px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.c-field__control--textarea {
+  height: 128px;
+  padding-block: 14px;
+  resize: vertical;
+}
+
+.c-field__control::placeholder {
+  color: var(--color-muted);
+}
+
+.c-field__control:hover {
+  background: var(--color-field-hover);
+}
+
+.c-field__control:not(:placeholder-shown) {
+  box-shadow: inset 0 0 0 1px var(--color-text);
+}
+
+.c-field__control:focus-visible {
+  background: var(--color-bg);
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.c-field__control:user-invalid {
+  box-shadow: inset 0 0 0 2px var(--color-error);
+}

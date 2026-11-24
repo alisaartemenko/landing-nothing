@@ -1,0 +1,25 @@
+@use '../2-tools' as *;
+
+// Блок-«батько»: розміщує section-title та product-card по колонках сітки
+.c-recommended__title {
+  grid-column: 1 / -1;
+  margin-bottom: 48px;
+}
+
+.c-recommended__item {
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mq(tablet) {
+    margin-bottom: 56px;
+  }
+
+  @include mq(desktop) {
+    grid-column: span 4;
+    margin-bottom: 0;
+  }
+}

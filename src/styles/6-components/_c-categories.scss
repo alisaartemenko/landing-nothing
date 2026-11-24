@@ -1,0 +1,42 @@
+@use '../2-tools' as *;
+
+.c-categories {
+  padding-bottom: 96px;
+
+  @include mq(tablet) {
+    padding-bottom: 120px;
+  }
+}
+
+.c-categories__title {
+  grid-column: 1 / -1;
+  max-width: 280px;
+  margin-bottom: 48px;
+
+  @include mq(tablet) {
+    max-width: 540px;
+  }
+
+  @include mq(desktop) {
+    max-width: 560px;
+  }
+}
+
+.c-categories__item {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  margin-bottom: 48px;
+
+  @include mq(tablet) {
+    margin-bottom: 56px;
+  }
+}
+
+.c-categories__more {
+  grid-column: 1 / -1;
+
+  @include mq(desktop) {
+    grid-column: 1 / span 4;
+  }
+}

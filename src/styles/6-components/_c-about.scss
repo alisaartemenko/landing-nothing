@@ -1,0 +1,31 @@
+@use '../2-tools' as *;
+
+.c-about__title {
+  grid-column: 1 / -1;
+
+  @include mq(tablet) {
+    grid-column: 1 / span 3;
+  }
+
+  @include mq(desktop) {
+    grid-column: 1 / span 6;
+  }
+}
+
+.c-about__text {
+  grid-column: 1 / -1;
+  margin-top: 28px;
+
+  @include mq(tablet) {
+    grid-column: 4 / -1;
+    margin-top: 8px;
+  }
+
+  @include mq(desktop) {
+    grid-column: 7 / -1;
+  }
+}
+
+.c-about__paragraph + .c-about__paragraph {
+  margin-top: 24px;
+}

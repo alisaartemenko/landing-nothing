@@ -1,0 +1,19 @@
+.c-info__label {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-muted);
+}
+
+.c-info__value {
+  margin-top: 8px;
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-info__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
