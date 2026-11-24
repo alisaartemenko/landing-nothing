@@ -1,0 +1,7 @@
+// Обмежувач ширини з полями макета (без сітки)
+.o-container {
+  width: 100%;
+  max-width: var(--grid-max);
+  margin-inline: auto;
+  padding-inline: var(--grid-margin);
+}
