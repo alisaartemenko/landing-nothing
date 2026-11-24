@@ -1,0 +1,19 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-class-pattern": [
+      "^(o|c|u)-[a-z0-9]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      { "message": "Очікується BEM з префіксом шару ITCSS: o- / c- / u-" }
+    ],
+    "selector-max-id": 0,
+    "selector-max-compound-selectors": 3,
+    "declaration-no-important": true
+  },
+  "overrides": [
+    {
+      "files": ["src/styles/7-utilities/**/*.scss"],
+      "rules": { "declaration-no-important": null }
+    },
+    { "files": ["src/styles/6-components/**/*.scss"], "rules": { "selector-max-type": 0 } }
+  ]
+}
