@@ -1,0 +1,79 @@
+@use '../2-tools' as *;
+
+.c-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow-y: auto;
+  visibility: hidden;
+  background: var(--color-menu);
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    visibility 0.2s;
+}
+
+.c-menu-toggle:checked ~ .c-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.c-menu-toggle:checked ~ .c-header {
+  visibility: hidden;
+}
+
+:root:has(.c-menu-toggle:checked) {
+  overflow: hidden;
+}
+
+.c-menu__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.c-menu__nav {
+  padding-top: 29px;
+
+  @include mq(tablet) {
+    padding-top: 53px;
+  }
+}
+
+.c-menu__list > * + * {
+  margin-top: 24px;
+}
+
+.c-menu__link {
+  display: inline-block;
+  font: 700 24px/30px var(--font-heading);
+  letter-spacing: 0.05em;
+}
+
+.c-menu__link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.c-menu__contact {
+  margin-top: 43px;
+}
+
+.c-menu__phone {
+  display: block;
+  font: 700 16px/22px var(--font-heading);
+  letter-spacing: 0.05em;
+}
+
+.c-menu__call {
+  display: inline-block;
+  margin-top: 16px;
+  font: 700 14px/22px var(--font-heading);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

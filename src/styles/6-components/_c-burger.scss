@@ -1,0 +1,18 @@
+// Бургер-іконка: hover — лінії скорочуються (стан із макета Icons & Logo)
+.c-burger {
+  fill: currentcolor;
+}
+
+.c-burger__line {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition: transform 0.2s;
+}
+
+.c-header__burger:hover .c-burger__line--top {
+  transform: scaleX(0.7);
+}
+
+.c-header__burger:hover .c-burger__line--bottom {
+  transform: scaleX(0.5);
+}

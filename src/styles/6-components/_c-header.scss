@@ -1,0 +1,79 @@
+@use '../2-tools' as *;
+
+.c-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: var(--header-height);
+}
+
+.c-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.c-header__logo {
+  display: block;
+}
+
+.c-header__logo-icon {
+  width: 132px;
+  aspect-ratio: 182.2 / 25.4;
+
+  @include mq(tablet) {
+    width: 182px;
+  }
+}
+
+.c-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.c-header__phone {
+  position: relative;
+  display: block;
+}
+
+.c-header__phone-number {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 12px);
+  font: 700 14px/1 var(--font-heading);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(8px, -50%);
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.c-header__phone:hover .c-header__phone-number,
+.c-header__phone:focus-visible .c-header__phone-number {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.c-header__burger,
+.c-menu__close {
+  display: block;
+  cursor: pointer;
+}
+
+.c-header__icon {
+  width: 24px;
+  height: 24px;
+  fill: currentcolor;
+}
+
+// видимий фокус для label-кнопок (фокус живе на прихованому checkbox)
+.c-menu-toggle:focus-visible ~ .c-header .c-header__burger,
+.c-menu-toggle:focus-visible ~ .c-menu .c-menu__close {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
