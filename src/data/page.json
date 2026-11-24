@@ -1,0 +1,56 @@
+{
+  "title": "Nothing — Bring joy back to the everyday",
+  "description": "Nothing: phones, earbuds and accessories designed with instinct to bring joy back to the everyday.",
+  "phone": { "tel": "tel:+123455555555", "text": "+1 234 5555-55-55", "short": "+1 234 555-55-55" },
+  "email": "hello@nothing.com",
+  "address": ["400 first ave.", "suite 700", "Minneapolis, MN 55401"],
+  "nav": ["Products", "Store", "Login", "Cart(0)"],
+  "hero": { "title": "Bring joy back to the everyday" },
+  "products": [
+    {
+      "name": "Phone (1)",
+      "img": "product-phone",
+      "pos": "50% 4%",
+      "price": "$ 499.00",
+      "text": "Designed with instinct, to bring joy back to the everyday. Through the Glyph Interface, a perfected OS and exceptional dual camera. All startlingly fast."
+    },
+    {
+      "name": "Ear (2)",
+      "img": "product-ear2",
+      "pos": "50% 50%",
+      "price": "$ 149.00",
+      "text": "Perfecting the path from artist to ear. So that music sounds just as it was intended."
+    },
+    {
+      "name": "Ear (stick)",
+      "img": "product-ear-stick",
+      "pos": "50% 50%",
+      "price": "$ 119.00",
+      "text": "Tech you can’t feel. Leaving just space for sound to come to life. Powered by custom sound technology."
+    }
+  ],
+  "categories": [
+    {
+      "name": "All products",
+      "media": [{ "img": "cat-all-wide", "wide": true }, { "img": "cat-all-narrow" }]
+    },
+    {
+      "name": "Audio",
+      "media": [{ "img": "cat-audio-narrow" }, { "img": "cat-audio-wide", "wide": true }]
+    },
+    {
+      "name": "Accessories",
+      "media": [{ "img": "cat-acc-wide", "wide": true }, { "img": "cat-acc-narrow" }]
+    }
+  ],
+  "about": [
+    [
+      "We’re a London-based tech company on a mission to remove barriers between people and technology."
+    ],
+    [
+      "To do this, we’re crafting intuitive, flawlessly connected products that improve our lives without getting in the way.",
+      "No confusing tech-speak. No silly product names. Just artistry, passion and trust. And products we’re proud to share with our friends and family. Simple."
+    ],
+    ["Because beautiful tech shouldn’t be complicated."]
+  ]
+}

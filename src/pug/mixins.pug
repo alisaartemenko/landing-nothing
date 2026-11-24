@@ -1,0 +1,19 @@
+//- <picture>: ...
+mixin picture(name, sizes, alt, o = {})
+  - const srcset = (n, ext) => images[n].widths.map((w) => `${base}img/${n}-${w}.${ext} ${w}w`).join(', ')
+  - const img = images[name]
+  picture(class=o.cls)
+    each a in (o.art || [])
+      source(type='image/avif' media=a.media srcset=srcset(a.name, 'avif') sizes=sizes)
+      source(type='image/webp' media=a.media srcset=srcset(a.name, 'webp') sizes=sizes)
+    source(type='image/avif' srcset=srcset(name, 'avif') sizes=sizes)
+    source(type='image/webp' srcset=srcset(name, 'webp') sizes=sizes)
+    img(class=o.imgCls src=`${base}img/${name}-${img.widths[img.widths.length - 1]}.jpg` srcset=srcset(name, 'jpg') sizes=sizes width=img.w height=img.h alt=alt loading=(o.priority ? undefined : 'lazy') decoding='async' fetchpriority=(o.priority ? 'high' : undefined) style=o.style)
+
+mixin icon(id, cls)
+  svg(class=cls width='24' height='24' aria-hidden='true' focusable='false')
+    use(href=`#icon-${id}`)
+
+mixin logo(cls)
+  svg(class=cls aria-hidden='true' focusable='false')
+    use(href='#icon-logo')

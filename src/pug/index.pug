@@ -1,0 +1,103 @@
+extends layout
+include mixins
+
+block content
+  input#menu-toggle.c-menu-toggle.u-visually-hidden(type='checkbox' aria-label='Menu')
+
+  header.c-header
+    .o-container.c-header__inner
+      a.c-header__logo(href='#top' aria-label='Nothing — home')
+        +logo('c-header__logo-icon')
+      .c-header__actions
+        a.c-header__phone(href=page.phone.tel aria-label='Call us')
+          span.c-header__phone-number= page.phone.short
+          +icon('phone', 'c-header__icon')
+        label.c-header__burger(for='menu-toggle')
+          span.u-visually-hidden Open menu
+          svg.c-burger(width='24' height='24' viewBox='0 0 24 24' aria-hidden='true' focusable='false')
+            rect.c-burger__line.c-burger__line--top(x='3' y='6' width='18' height='2' rx='1')
+            rect.c-burger__line.c-burger__line--mid(x='3' y='11' width='18' height='2' rx='1')
+            rect.c-burger__line.c-burger__line--bottom(x='3' y='16' width='18' height='2' rx='1')
+
+  .c-menu
+    .o-container.c-menu__bar
+      a.c-header__logo(href='#top' tabindex='-1' aria-hidden='true')
+        +logo('c-header__logo-icon')
+      label.c-menu__close(for='menu-toggle')
+        span.u-visually-hidden Close menu
+        +icon('close', 'c-header__icon')
+    .o-container
+      nav.c-menu__nav(aria-label='Main')
+        ul.c-menu__list
+          each item in page.nav
+            li: a.c-menu__link(href='#')= item
+      .c-menu__contact
+        a.c-menu__phone(href=page.phone.tel)= page.phone.text
+        a.c-menu__call(href=page.phone.tel) Call to order
+
+  main#top
+    section.c-hero
+      +picture('hero-mobile', '100vw', 'Smiling woman with curly hair holding a Nothing phone to her face', { priority: true, cls: 'c-hero__picture', imgCls: 'c-hero__image', art: [{ media: '(min-width: 1260px)', name: 'hero-desktop' }, { media: '(min-width: 744px)', name: 'hero-tablet' }] })
+      .o-container.c-hero__content
+        h1.c-hero__title= page.hero.title
+
+    section.c-recommended.o-section.o-section--after-hero
+      .o-grid
+        h2.c-section-title.c-recommended__title Recommended
+        each p in page.products
+          article.c-product-card.c-recommended__item
+            +picture(p.img, '(min-width: 1260px) 324px, (min-width: 744px) 600px, 280px', '', { cls: 'c-product-card__media', imgCls: 'c-product-card__image', style: `--pos: ${p.pos}` })
+            h3.c-product-card__title= p.name
+            p.c-product-card__text= p.text
+            p.c-product-card__price= p.price
+
+    section.c-categories.o-section
+      .o-grid
+        h2.c-section-title.c-categories__title Browse Nothing products by category
+        each c in page.categories
+          article.c-category.c-categories__item
+            each m in c.media
+              +picture(m.img, m.wide ? '(min-width: 1260px) 672px, (min-width: 744px) 392px, 130px' : '(min-width: 1260px) 324px, (min-width: 744px) 184px, 130px', '', { cls: (m.wide ? 'c-category__media c-category__media--wide' : 'c-category__media'), imgCls: 'c-category__image' })
+            h3.c-category__title= c.name
+        a.c-button.c-categories__more(href='#') View all
+
+    .c-banner
+      +picture('banner', '100vw', '', { cls: 'c-banner__picture', imgCls: 'c-banner__image' })
+
+    section.c-about.o-section.o-section--flush
+      .o-grid
+        h2.c-section-title.c-about__title About us
+        .c-about__text
+          each para in page.about
+            p.c-about__paragraph
+              each line, i in para
+                if i
+                  br
+                | #{line}
+
+    section.c-contacts.o-section
+      .o-grid
+        h2.c-section-title.c-contacts__title Contact us
+        form.c-form.c-contacts__form(action='#' method='post')
+          .c-field
+            label.u-visually-hidden(for='f-name') Name
+            input#f-name.c-field__control(type='text' name='name' placeholder='Name' autocomplete='name' required)
+          .c-field
+            label.u-visually-hidden(for='f-email') Email
+            input#f-email.c-field__control(type='email' name='email' placeholder='Email' autocomplete='email' required)
+          .c-field
+            label.u-visually-hidden(for='f-message') Message
+            textarea#f-message.c-field__control.c-field__control--textarea(name='message' placeholder='Message' rows='4' required)
+          button.c-button.c-form__submit(type='submit') Send
+        dl.c-info.c-contacts__info
+          dt.c-info__label Phone
+          dd.c-info__value: a.c-info__link(href=page.phone.tel)= page.phone.text
+          dt.c-info__label Email
+          dd.c-info__value: a.c-info__link(href=`mailto:${page.email}`)= page.email
+          dt.c-info__label Address
+          dd.c-info__value
+            address.c-info__address
+              each line, i in page.address
+                if i
+                  br
+                | #{line}
