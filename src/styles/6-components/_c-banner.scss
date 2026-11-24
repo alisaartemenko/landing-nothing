@@ -1,0 +1,27 @@
+@use '../2-tools' as *;
+
+// Повноширинний банер: FILL WIDTH, прив'язка кадру до низу
+.c-banner {
+  height: 200px;
+  overflow: hidden;
+
+  @include mq(tablet) {
+    height: 400px;
+  }
+
+  @include mq(desktop) {
+    height: 462px;
+  }
+}
+
+.c-banner__picture {
+  width: 100%;
+  height: 100%;
+}
+
+.c-banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+}

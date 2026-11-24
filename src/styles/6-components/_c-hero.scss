@@ -1,0 +1,58 @@
+@use '../2-tools' as *;
+
+// Hero: FILL HEIGHT на mobile/tablet, FILL WIDTH на desktop (object-fit + object-position)
+.c-hero {
+  --hero-bottom: 46px;
+
+  position: relative;
+  max-height: 760px;
+  aspect-ratio: 320 / 568;
+
+  @include mq(tablet) {
+    --hero-bottom: 72px;
+
+    max-height: 1100px;
+    aspect-ratio: 744 / 994;
+  }
+
+  @include mq(desktop) {
+    --hero-bottom: 101px;
+
+    max-height: none;
+    aspect-ratio: 1260 / 720;
+  }
+}
+
+.c-hero__picture {
+  position: absolute;
+  inset: 0;
+}
+
+.c-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.c-hero__content {
+  position: absolute;
+  inset: auto 0 var(--hero-bottom);
+  margin-inline: auto;
+}
+
+.c-hero__title {
+  max-width: 280px;
+  font-size: 36px;
+  line-height: 1;
+
+  @include mq(tablet) {
+    max-width: 380px;
+    font-size: 48px;
+  }
+
+  @include mq(desktop) {
+    max-width: 520px;
+    font-size: 56px;
+  }
+}
