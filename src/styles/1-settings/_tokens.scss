@@ -1,0 +1,38 @@
+// Дизайн-токени (SCSS) — значення зі зчитаного макета
+$breakpoints: (
+  'tablet': 744px,
+  'desktop': 1260px,
+);
+
+// Модульна сітка: колонки / gutter / margin
+$grid: (
+  'mobile': (
+    columns: 2,
+    gutter: 20px,
+    margin: 20px,
+  ),
+  'tablet': (
+    columns: 6,
+    gutter: 24px,
+    margin: 72px,
+  ),
+  'desktop': (
+    columns: 12,
+    gutter: 24px,
+    margin: 120px,
+  ),
+);
+$grid-max: 1260px;
+$colors: (
+  'text': #292929,
+  'bg': #fff,
+  'field': #f0f1f4,
+  'field-hover': #e5e7eb,
+  'muted': #6f7680,
+  'menu': #e4e5e7,
+  'button-hover': #000,
+  'button-pressed': #555,
+  'error': #c0392b,
+);
+$font-heading: 'Space Grotesk', sans-serif;
+$font-body: 'Space Mono', monospace;

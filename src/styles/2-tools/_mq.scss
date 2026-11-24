@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../1-settings' as s;
+
+// Mobile first: @include mq(tablet) { ... } => min-width
+@mixin mq($name) {
+  @media (min-width: map.get(s.$breakpoints, $name)) {
+    @content;
+  }
+}

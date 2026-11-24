@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use '../1-settings' as s;
+@use '../2-tools' as *;
+
+// SCSS-токени → CSS custom properties
+:root {
+  @each $name, $value in s.$colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --font-heading: #{s.$font-heading};
+  --font-body: #{s.$font-body};
+  --grid-max: #{s.$grid-max};
+  --grid-columns: #{map.get(map.get(s.$grid, 'mobile'), 'columns')};
+  --grid-gutter: #{map.get(map.get(s.$grid, 'mobile'), 'gutter')};
+  --grid-margin: #{map.get(map.get(s.$grid, 'mobile'), 'margin')};
+  --header-height: 72px;
+  --section-gap: 90px;
+
+  @include mq(tablet) {
+    --grid-columns: #{map.get(map.get(s.$grid, 'tablet'), 'columns')};
+    --grid-gutter: #{map.get(map.get(s.$grid, 'tablet'), 'gutter')};
+    --grid-margin: #{map.get(map.get(s.$grid, 'tablet'), 'margin')};
+    --header-height: 96px;
+    --section-gap: 112px;
+  }
+
+  @include mq(desktop) {
+    --grid-columns: #{map.get(map.get(s.$grid, 'desktop'), 'columns')};
+    --grid-gutter: #{map.get(map.get(s.$grid, 'desktop'), 'gutter')};
+    --grid-margin: #{map.get(map.get(s.$grid, 'desktop'), 'margin')};
+  }
+}
