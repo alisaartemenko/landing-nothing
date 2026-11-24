@@ -1,7 +1,7 @@
 # landing-nothing
 
 Лабораторна робота №10 · **Варіант 2: Nothing · BEM + ITCSS**
-Макет: Figma, сторінка `v2 Nothing` · Демо: `https://alisaartemenko.github.io/landing-nothing/`
+Макет: Figma, сторінка `v2 Nothing` · Демо: https://alisaartemenko.github.io/landing-nothing/
 
 ## Команди
 
