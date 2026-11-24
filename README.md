@@ -67,4 +67,9 @@ src/styles/
 
 ## Скриншоти
 
-PerfectPixel 320 / 744 / 1260 — _додати_ · W3C Validator — _додати_ · PageSpeed Mobile/Desktop — _додати_
+W3C Validator — <img width="1365" height="654" alt="Знімок екрана 2026-11-24 о 21 02 52" src="https://github.com/user-attachments/assets/550f9619-c03a-4cb7-9025-e61a2f450876" />
+ · PageSpeed Mobile/Desktop — 
+ <img width="1000" height="721" alt="Знімок екрана 2026-11-24 о 21 04 08" src="https://github.com/user-attachments/assets/a54c3d2a-c8ae-485f-be5e-bb2d25a27b0d" />
+ <img width="1023" height="720" alt="Знімок екрана 2026-11-24 о 21 04 14" src="https://github.com/user-attachments/assets/a12b0019-8c49-44c5-93e6-9b26c1e07cc2" />
+
+
