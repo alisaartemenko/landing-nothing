@@ -1,0 +1,15 @@
+{
+  "hero-mobile": { "w": 640, "h": 1136, "widths": [320, 640] },
+  "hero-tablet": { "w": 1488, "h": 1984, "widths": [744, 1488] },
+  "hero-desktop": { "w": 2520, "h": 1440, "widths": [1260, 1920, 2520] },
+  "product-phone": { "w": 750, "h": 1125, "widths": [320, 640, 750] },
+  "product-ear2": { "w": 2160, "h": 1721, "widths": [320, 640, 1200] },
+  "product-ear-stick": { "w": 750, "h": 751, "widths": [320, 640, 750] },
+  "cat-all-wide": { "w": 1344, "h": 648, "widths": [336, 672, 1344] },
+  "cat-all-narrow": { "w": 648, "h": 648, "widths": [324, 648] },
+  "cat-audio-narrow": { "w": 648, "h": 648, "widths": [324, 648] },
+  "cat-audio-wide": { "w": 1344, "h": 648, "widths": [336, 672, 1344] },
+  "cat-acc-wide": { "w": 1344, "h": 648, "widths": [336, 672, 1344] },
+  "cat-acc-narrow": { "w": 648, "h": 648, "widths": [324, 648] },
+  "banner": { "w": 1592, "h": 1269, "widths": [640, 1280, 1592] }
+}
